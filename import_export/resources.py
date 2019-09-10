@@ -933,7 +933,7 @@ def modelresource_factory(model, resource_class=ModelResource):
     """
     Factory for creating ``ModelResource`` class for given Django model.
     """
-    attrs = {'model': model}
+    attrs = {'model': model, 'exclude': ('id',)}
     Meta = type(str('Meta'), (object,), attrs)
 
     class_name = model.__name__ + str('Resource')
